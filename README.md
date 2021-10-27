@@ -10,6 +10,8 @@ O objetivo desse trabalho é a criação de um sistema que automatize o controle
 | Larissa Aline Fernandes Vieira | 2018088089 |
 | Lucca Carvalho Augusto  | 2019006930 |
 
+## Tecnologias
+
 - **Database**: SQL
 - **Backend**: Django
 - **Frontend**: React
