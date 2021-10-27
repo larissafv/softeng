@@ -1,4 +1,4 @@
-# Controle Financeiro
+# Dr. Pig (Sistema de Controle Financeiro)
 
 O objetivo desse trabalho é a criação de um sistema que automatize o controle financeiro pessoal, facilitando também a análise de receitas e despesas através de gráficos e afins.
 
