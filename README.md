@@ -2,7 +2,11 @@
 
 O objetivo desse trabalho é a criação de um sistema que automatize o controle financeiro pessoal, facilitando também a análise de receitas e despesas através de gráficos e afins.
 
-## Grupo
+## Funcionalidades
+
+O sistema deve ser capaz de armazenar as receitas e despesas inseridas e, a partir disso, gerar cálculos e gráficos automáticos que auxiliem no entendimento do estado financeiro passado, presente e futuro do usuário. Além disso, a aplicação deve oferecer um espaço exclusivo para o acompanhamento de investimentos que sejam de interesse do cliente.
+
+## Desenvolvedores
 
 | Nome    | Matricula  |
 |---------|------------|
