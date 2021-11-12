@@ -19,3 +19,6 @@ O sistema deve ser capaz de armazenar as receitas e despesas inseridas e, a part
 - **Database**: SQL
 - **Backend**: Django
 - **Frontend**: React
+
+## Kanban
+https://stingy-gastonia-f61.notion.site/deb605a64e39482daf07e82d1b305341?v=2e85ce941774431abd3acaf4d0d43c82
