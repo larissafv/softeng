@@ -11,7 +11,7 @@ O sistema deve ser capaz de armazenar as receitas e despesas inseridas e, a part
 | Nome    | Matricula  |
 |---------|------------|
 | Daniel Victor Ferreira Silva | 2019006523 |
-| Larissa Aline Fernandes Vieira | 2018088089 |
+| Larissa Aline Fernandes Vieira | 201906868 |
 | Lucca Carvalho Augusto  | 2019006930 |
 
 ## Tecnologias
