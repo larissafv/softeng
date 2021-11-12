@@ -26,6 +26,7 @@ O sistema deve ser capaz de armazenar as receitas e despesas inseridas e, a part
 - As histórias de usuário estão no Backlog, cada uma com um número entre parêntesis "(x)", o qual foi atribuído a fim de facilitar o reconhecimento da origem das atividades nas colunas seguintes;
 - Cada card de história de usuário apresenta uma *tag* "OK" quando aquela já foi destrinchada em atividades;
 - Cada card de atividade apresenta uma *tag* com um número, indicando à qual história de usuário pertence;
+- Cada card de atividade tem um membro responsável, sendo aquele o desenvolvedor da tarefa em questão;
 - Alguns cards de atividades contêm uma *to-do-list*, a fim de facilitar a organização do desenvolvedor daquela tarefa;
 - Todo card tem a sua prioridade, a qual pode ser "Alta", "Média" ou "Baixa";
 - Todo card tem um título e descrição.
