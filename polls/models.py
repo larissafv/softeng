@@ -3,18 +3,21 @@ import datetime
 from django.db import models
 from django.utils import timezone
 
-class Question(models.Model):
-    question_text = models.CharField(max_length=256)
-    pub_date = models.DateTimeField("date published")
+class Lancamento(models.Model):
+    Id = models.BigAutoField(primary_key=True)
+    Titulo = models.CharField(max_length=50)
+    Valor = models.IntegerField()
+    Descricao = models.CharField(max_length=500)
+    DataHoraEnvio = models.DateTimeField()
 
     def __str__(self):
-        return self.question_text
+        return f'"{self.Titulo}" modificou seu saldo em {self.Valor}'
 
-    def was_published_recently(self):
-        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
-        
+    def FoiLancadoEsteMes(self):
+        return self.DataHoraEnvio >= timezone.now() - datetime.timedelta(days=30)
 
-class Choice(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    choice_text = models.CharField(max_length=256)
-    votes = models.IntegerField(default = 0)
+    def FoiLancadoEstaSemana(self):
+        return self.DataHoraEnvio >= timezone.now() - datetime.timedelta(weeks=1)
+
+    def FoiLancadoHoje(self):
+        return self.DataHoraEnvio >= timezone.now() - datetime.timedelta(days=1)
