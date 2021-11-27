@@ -1,4 +1,5 @@
 import './Sidebar.css';
+import { Link } from "react-router-dom";
 import logo from '../../assets/logo.jpg';
 
 const Sidebar = ({ sidebarOpen, closeSidebar }) => {
@@ -19,11 +20,11 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
             <div className="sidebar__menu">
                 <div className="sidebar__link active_menu_link">
                     <i className="fa fa-minus-square"></i>
-                    <a href="#">Home</a>
+                    <a href="/">Home</a>
                 </div>
                 <div className="sidebar__link">
-                    <i className="fa fa-tachometer"></i>
-                    <a href="#">Área administrativa</a>
+                    <i className="fa fa-comment-dollar"></i>
+                    <Link to="/form-lancamento">Lançamentos</Link>
                 </div>
                 <div className="sidebar__link">
                     <i className="fa fa-building"></i>
