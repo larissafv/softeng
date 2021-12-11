@@ -23,8 +23,12 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
                     <a href="/">Home</a>
                 </div>
                 <div className="sidebar__link">
+                    <i className="fa fa-wpforms"></i>
+                    <Link to="/form-lancamento">Novo Lançamento</Link>
+                </div>
+                <div className="sidebar__link">
                     <i className="fa fa-comment-dollar"></i>
-                    <Link to="/form-lancamento">Lançamentos</Link>
+                    <Link to="/lancamentos">Lançamentos</Link>
                 </div>
                 <div className="sidebar__link">
                     <i className="fa fa-building"></i>

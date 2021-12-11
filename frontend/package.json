@@ -18,6 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build-all": "rm -rf ../build && react-scripts build && cp -r build ../build && rm -rf build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
