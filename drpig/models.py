@@ -9,6 +9,8 @@ class Lancamento(models.Model):
     Valor = models.FloatField()
     Descricao = models.CharField(max_length=500)
     DataHoraEnvio = models.DateTimeField()
+    # Categoria = Chave estrangeira
+    # MetodoDePagamento = Chave estrangeira
 
     def __str__(self):
         return f'"{self.Titulo}" modificou seu saldo em {self.Valor}'
@@ -21,3 +23,11 @@ class Lancamento(models.Model):
 
     def FoiLancadoHoje(self):
         return self.DataHoraEnvio >= timezone.now() - datetime.timedelta(days=1)
+
+# class Categoria(models.Model):
+#     Id = models.BigAutoField(primary_key=True)
+#     Titulo = models.CharField(max_length=50)
+
+# class MetodoDePagamento(models.Model):
+#     Id = models.BigAutoField(primary_key=True)
+#     Titulo = models.CharField(max_length=50)
