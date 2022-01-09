@@ -41,13 +41,50 @@ const Lancamentos = () => {
     aux_pagamentos.map( aux => (
         pagamentos[aux.Id] = aux.Titulo
     ))
-
-
+    
+    var lancamentos1 = lancamentos
+    var busca_
+    const [busca, setBusca] = useState('');
+    console.log(busca);
+    function buscanegativos(val){
+        if(val.Valor<0)
+        return val
+    }
+    function buscapositivos(val){
+        if(val.Valor>0)
+        return val
+    }
+    function buscaData(val){
+        var ini = Date.parse(busca_.split(" - ")[0])
+        var fin = Date.parse(busca_.split(" - ")[1])        
+        if(Date.parse(val.DataHoraEnvio)>=ini && Date.parse(val.DataHoraEnvio)<=fin)
+        return val
+    }
+    for(let i=0; i<busca.split(',').length;i++){
+        busca_ = busca.split(',')[i]
+        if(busca_=="despesas"){
+            lancamentos1 = lancamentos1.filter(buscanegativos)
+            console.log(lancamentos1)
+        }
+        if(busca_ == "ganhos"){
+            lancamentos1 = lancamentos1.filter(buscapositivos)
+            console.log(lancamentos1)
+        }
+        if(busca_.length == 23){
+            if(busca_.split(" - ").length ==2 && busca_.split(" - ")[1].split("-").length ==3 && busca_.split(" - ")[1].split("-")[2].length ==2 && Date.parse(busca_.split(" - ")[1]) > Date.parse(busca_.split(" - ")[0])){
+                lancamentos1 = lancamentos1.filter(buscaData)
+            }
+        }
+    }
     return (
         <div className="container">
             <div class="lanc">
                 <div class="tbl-container">
                 <h1 class="tbl-h1">Registros</h1>
+                    <div class="filter-div">
+                        <span>Filtrar por </span>
+                        <input type="text" value = {busca} onChange={(env) => setBusca(env.target.value)}/>
+                    </div>
                     <table cellpadding="0" cellspacing="0" border="0">
                         <div class="tbl-content">
                             <div class="tbl-header">
@@ -58,16 +95,18 @@ const Lancamentos = () => {
                                     <th>Pagamento</th>
                                     <th>Título</th>
                                     <th>Valor</th>
+                                    <th>Data</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                { lancamentos.map( lancamento => (
+                                { lancamentos1.map( lancamento => (
                                     <tr key={lancamento.Id}>
                                         <td>{lancamento.Id}</td>
                                         <td>{categorias[lancamento.Categoria]}</td>
                                         <td>{pagamentos[lancamento.MetodoDePagamento]}</td>
                                         <td>{lancamento.Titulo}</td>
                                         <td>{lancamento.Valor}</td>
+                                        <td>{lancamento.DataHoraEnvio.split("T")[0]}</td>
                                     </tr>
                                 ))}
                                 </tbody>
