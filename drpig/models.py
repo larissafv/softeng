@@ -24,7 +24,7 @@ class Lancamento(models.Model):
     Titulo = models.CharField(max_length=50)
     Valor = models.FloatField()
     Descricao = models.CharField(max_length=500)
-    DataHoraEnvio = models.DateTimeField()
+    DataHoraEnvio = models.DateTimeField(auto_now_add=True)
     Categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     MetodoDePagamento = models.ForeignKey(MetodoDePagamento, on_delete=models.CASCADE)
 
