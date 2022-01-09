@@ -30,22 +30,6 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
                     <i className="fa fa-comment-dollar"></i>
                     <Link to="/lancamentos">Lançamentos</Link>
                 </div>
-                <div className="sidebar__link">
-                    <i className="fa fa-building"></i>
-                    <a href="#">Lojas</a>
-                </div>
-                <div className="sidebar__link">
-                    <i className="fa fa-archive"></i>
-                    <a href="#">Produtos</a>
-                </div>
-                <div className="sidebar__link">
-                    <i className="fa fa-bars"></i>
-                    <a href="#">Categorias</a>
-                </div>
-                <div className="sidebar__link">
-                    <i className="fa fa-cutlery"></i>
-                    <a href="#">Pedidos</a>
-                </div>
             </div>
         </div>
     )

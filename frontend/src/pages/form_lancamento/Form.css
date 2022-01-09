@@ -17,7 +17,7 @@ button, input, body {
 
 .flanc__container{
     width: 450px; 
-    height: 450px;
+    height: 550px;
     padding: 10px;
     display: flex;
     flex-direction: column;

@@ -16,6 +16,26 @@
     margin-bottom: 15px;
 }
 
+.filter-div input[type=text]{
+    width: 100%;
+    padding: 10px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #848488;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: border-color .2s;
+}
+
+.filter-div input::placeholder{
+    color: #ce75c0;
+}
+
+.filter-div input:focus{
+    border-bottom-color: #ce75c0;
+}
+
 table{
     width:100%;
 }

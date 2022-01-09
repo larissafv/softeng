@@ -37,6 +37,14 @@ const Form_Lancamento = () => {
                         <br />
                         </div>
                         <div className="form_group">
+                        <input className="form_group_control" type="text" maxLength={50} id="flanc_categoria" name="categoria_lancamento" placeholder="Categoria" />
+                        <br />
+                        </div>
+                        <div className="form_group">
+                        <input className="form_group_control" type="text" maxLength={50} id="flanc_metodo" name="metodo_lancamento" placeholder="Método de Pagamento"/>
+                        <br />
+                        </div>
+                        <div className="form_group">
                         <input className="form_group_control" type="number" id="flanc_valor" name="valor_lancamento" placeholder="Valor"/>
                         <br />
                         </div>

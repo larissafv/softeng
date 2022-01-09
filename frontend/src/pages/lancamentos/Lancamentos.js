@@ -94,8 +94,7 @@ const Lancamentos = () => {
                 <div class="tbl-container">
                 <h1 class="tbl-h1">Registros</h1>
                     <div class="filter-div">
-                        <span>Filtrar por </span>
-                        <input type="text" value = {busca} onChange={(env) => setBusca(env.target.value)}/>
+                        <input type="text" placeholder="Procurar" value = {busca} onChange={(env) => setBusca(env.target.value)}/>
                     </div>
                     <table cellpadding="0" cellspacing="0" border="0">
                         <div class="tbl-content">
