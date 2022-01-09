@@ -10,12 +10,14 @@ class Categoria(models.Model):
     def __str__(self):
             return self.Titulo
 
+
 class MetodoDePagamento(models.Model):
     Id = models.BigAutoField(primary_key=True)
     Titulo = models.CharField(max_length=50)
 
     def __str__(self):
         return self.Titulo
+
 
 class Lancamento(models.Model):
     Id = models.BigAutoField(primary_key=True)
