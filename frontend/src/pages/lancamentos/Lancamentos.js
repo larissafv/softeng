@@ -45,7 +45,6 @@ const Lancamentos = () => {
     var lancamentos1 = lancamentos
     var busca_
     const [busca, setBusca] = useState('');
-    console.log(busca);
     function buscanegativos(val){
         if(val.Valor<0)
         return val
@@ -60,22 +59,35 @@ const Lancamentos = () => {
         if(Date.parse(val.DataHoraEnvio)>=ini && Date.parse(val.DataHoraEnvio)<=fin)
         return val
     }
+    function buscacategoria(val){
+        if(categorias[val.Categoria]==busca_)
+        return val
+    }
+    function buscapagamento(val){
+        if(pagamentos[val.MetodoDePagamento]==busca_)
+        return val
+    }
     for(let i=0; i<busca.split(',').length;i++){
         busca_ = busca.split(',')[i]
         if(busca_=="despesas"){
             lancamentos1 = lancamentos1.filter(buscanegativos)
-            console.log(lancamentos1)
         }
-        if(busca_ == "ganhos"){
+        else if(busca_ == "ganhos"){
             lancamentos1 = lancamentos1.filter(buscapositivos)
-            console.log(lancamentos1)
         }
-        if(busca_.length == 23){
+        else if(Object.values(categorias).includes(busca_)){
+            lancamentos1 = lancamentos1.filter(buscacategoria)
+        }
+        else if(Object.values(pagamentos).includes(busca_)){
+            lancamentos1 = lancamentos1.filter(buscapagamento)
+        }
+        else if(busca_.length == 23){
             if(busca_.split(" - ").length ==2 && busca_.split(" - ")[1].split("-").length ==3 && busca_.split(" - ")[1].split("-")[2].length ==2 && Date.parse(busca_.split(" - ")[1]) > Date.parse(busca_.split(" - ")[0])){
                 lancamentos1 = lancamentos1.filter(buscaData)
             }
         }
     }
+    
     return (
         <div className="container">
             <div class="lanc">
