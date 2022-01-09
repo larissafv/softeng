@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-
 import './Lancamentos.css';
 import Sidebar from '../../dashboard/sidebar/Sidebar';
 
@@ -18,15 +17,33 @@ const Lancamentos = () => {
 
     return (
         <div className="container">
-            <div className="lancamentos">
-                <div className="flanc__container">
-
-                {
-                lancamentos.map( lancamento => (
-                    <p key={lancamento.Id}> {lancamento.Descricao}  |  {lancamento.Valor} </p>
-                ))}
-
-        
+            <div class="lanc">
+                <div class="tbl-container">
+                <h1 class="tbl-h1">Registros</h1>
+                    <table cellpadding="0" cellspacing="0" border="0">
+                    <div class="tbl-content">
+                        <div class="tbl-header">
+                            <thead>
+                                <tr>
+                                <th>ID</th>
+                                <th>Título</th>
+                                <th>Valor</th>
+                                <th>Pagamento</th>
+                                <th>Categoria</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <td>id</td>
+                                <td>titulo</td>
+                                <td>valor</td>
+                                <td>pagamento</td>
+                                <td>categoria</td>
+                                </tr>
+                            </tbody>
+                            </div>
+                        </div>
+                    </table>
                 </div>
             </div>
             <Sidebar />
