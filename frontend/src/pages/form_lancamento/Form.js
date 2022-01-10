@@ -83,25 +83,31 @@ const Form_Lancamento = () => {
                         <div className="form_group">
                         <label for="categoria_lancamento">Categoria: </label>
                         <br />
-                        <select name="categoria_lancamento" id="cars">
+                        <br />
+                        <div className="custom_select">
+                        <select name="categoria_lancamento" id="flanc_categoria">
                         {
                             categorias.map( categoria => (
                                 <option value={categoria.Id}>{categoria.Titulo}</option>
                             ))
                         }
                         </select>
+                        </div>
                         <br />
                         </div>
                         <div className="form_group">
                         <label for="metodo_lancamento">Método de Pagamento: </label>
                         <br />
-                        <select name="metodo_lancamento" id="mets">
+                        <br />
+                        <div className="custom_select">
+                        <select name="metodo_lancamento" id="flanc_metodo">
                         {
                             pagamentos.map( pagamento => (
                                 <option value={pagamento.Id}>{pagamento.Titulo}</option>
                             ))
                         }
                         </select>
+                        </div>
                         <br />
                         </div>
                         <div className="form_group">

@@ -17,7 +17,7 @@ button, input, body {
 
 .flanc__container{
     width: 450px; 
-    height: 550px;
+    height: 580px;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -31,18 +31,17 @@ button, input, body {
     font-size: 14px;
     padding: 10px;
     color: #fff;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .flanc__form > label, .form_group > label{
     font-size: 14px;
     font-weight: 700;
     color: #ce75c0;
-    margin-bottom: 10px;
 }
 
 .flanc__radio{
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .rad-label {
@@ -150,3 +149,22 @@ button, input, body {
   .form_button:hover {
     color: #ce75c0;
   }
+
+.custom_select select{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+    background-color: #1e1e2e;
+    color: #848488;
+    padding: 10px;
+    width: 200px;
+    border: none;
+    font-size: 14px;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+    margin-bottom: -20px;
+    margin-top: -10px;
+}
+
