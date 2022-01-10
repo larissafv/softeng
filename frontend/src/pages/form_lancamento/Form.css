@@ -34,7 +34,7 @@ button, input, body {
     margin-bottom: 20px;
 }
 
-.flanc__form > label{
+.flanc__form > label, .form_group > label{
     font-size: 14px;
     font-weight: 700;
     color: #ce75c0;

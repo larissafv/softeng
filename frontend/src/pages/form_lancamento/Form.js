@@ -37,11 +37,24 @@ const Form_Lancamento = () => {
                         <br />
                         </div>
                         <div className="form_group">
-                        <input className="form_group_control" type="text" maxLength={50} id="flanc_categoria" name="categoria_lancamento" placeholder="Categoria" />
+                        <label for="categoria_lancamento">Categoria: </label>
+                        <br />
+                        <select name="categoria_lancamento" id="cars">
+                        <option value="Água">Água</option>
+                        <option value="Luz">Luz</option>
+                        <option value="Gasolina">Gasolina</option>
+                        <option value="Lazer">Lazer</option>
+                        </select>
                         <br />
                         </div>
                         <div className="form_group">
-                        <input className="form_group_control" type="text" maxLength={50} id="flanc_metodo" name="metodo_lancamento" placeholder="Método de Pagamento"/>
+                        <label for="metodo_lancamento">Método de Pagamento: </label>
+                        <br />
+                        <select name="metodo_lancamento" id="cars">
+                        <option value="Cheque">Cheque</option>
+                        <option value="Transferência">Trasferência</option>
+                        <option value="PIX">PIX</option>
+                        </select>
                         <br />
                         </div>
                         <div className="form_group">
