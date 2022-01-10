@@ -1,7 +1,28 @@
+import { useEffect, useState } from 'react';
 import './Form.css';
 import Sidebar from '../../dashboard/sidebar/Sidebar';
 
 const Form_Lancamento = () => {
+    const [categorias, setCategoria] = useState([])
+    useEffect(()=> {
+        const loadData = () => {
+            fetch('http://127.0.0.1:8000/api/categorias')
+            .then(response => response.json())
+            .then(data => setCategoria(data))
+        }
+        loadData()
+    }, [])
+        
+    const [pagamentos, setPagamentos] = useState([])
+    useEffect(()=> {
+        const loadData = () => {
+            fetch('http://127.0.0.1:8000/api/pagamentos')
+            .then(response => response.json())
+            .then(data => setPagamentos(data))
+        }
+        loadData()
+    }, [])
+
     return (
         <div className="container">
             <div className="formlancamento">
@@ -40,10 +61,11 @@ const Form_Lancamento = () => {
                         <label for="categoria_lancamento">Categoria: </label>
                         <br />
                         <select name="categoria_lancamento" id="cars">
-                        <option value="Água">Água</option>
-                        <option value="Luz">Luz</option>
-                        <option value="Gasolina">Gasolina</option>
-                        <option value="Lazer">Lazer</option>
+                        {
+                            categorias.map( categoria => (
+                                <option value={categoria.Id}>{categoria.Titulo}</option>
+                            ))
+                        }
                         </select>
                         <br />
                         </div>
@@ -51,9 +73,11 @@ const Form_Lancamento = () => {
                         <label for="metodo_lancamento">Método de Pagamento: </label>
                         <br />
                         <select name="metodo_lancamento" id="cars">
-                        <option value="Cheque">Cheque</option>
-                        <option value="Transferência">Trasferência</option>
-                        <option value="PIX">PIX</option>
+                        {
+                            pagamentos.map( pagamento => (
+                                <option value={pagamento.Id}>{pagamento.Titulo}</option>
+                            ))
+                        }
                         </select>
                         <br />
                         </div>
