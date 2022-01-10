@@ -62,7 +62,7 @@ const Form_Lancamento = () => {
                             <label className="rad-label">
                                 <input className="rad-input" type="radio" id="flanc_ganho" name="tipo_lancamento" value="Ganho" />
                                 <div class="rad-design"></div>
-                                <div class="rad-text">Ganho</div>
+                                <div class="rad-text">Receita</div>
                             </label>
                             <br />
                             <label className="rad-label">

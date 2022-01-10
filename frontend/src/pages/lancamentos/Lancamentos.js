@@ -72,7 +72,7 @@ const Lancamentos = () => {
         if(busca_=="despesas"){
             lancamentos1 = lancamentos1.filter(buscanegativos)
         }
-        else if(busca_ == "ganhos"){
+        else if(busca_ == "receitas"){
             lancamentos1 = lancamentos1.filter(buscapositivos)
         }
         else if(Object.values(categorias).includes(busca_)){
