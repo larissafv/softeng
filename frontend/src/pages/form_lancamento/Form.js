@@ -23,6 +23,29 @@ const Form_Lancamento = () => {
         loadData()
     }, [])
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        var json_data = {};
+        
+        json_data["Titulo"] = event.target.elements.titulo_lancamento.value;
+        json_data["Descricao"] = event.target.elements.descricao_lancamento.value;
+        json_data["MetodoDePagamento"] = parseInt(event.target.elements.mets.value);
+        json_data["Categoria"] = parseInt(event.target.elements.cars.value);
+
+        var sinal = 1;
+        if(event.target.elements.tipo_lancamento.value == "Despesa")
+            sinal = -1
+        json_data["Valor"] = event.target.elements.valor_lancamento.value * sinal;
+
+        console.log(json_data)
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(json_data)
+        };
+        fetch('http://127.0.0.1:8000/api/lancamentos', requestOptions)
+      }
+
     return (
         <div className="container">
             <div className="formlancamento">
@@ -30,7 +53,7 @@ const Form_Lancamento = () => {
                     <div className="flanc__title">
                         <h1>Novo Lançamento</h1>
                     </div>
-                    <form className="flanc__form" action="/">
+                    <form className="flanc__form" action="/" onSubmit={handleSubmit}>
                         <label>
                             Qual é o tipo de lançamento?
                         </label>
@@ -43,9 +66,9 @@ const Form_Lancamento = () => {
                             </label>
                             <br />
                             <label className="rad-label">
-                            <input className="rad-input" type="radio" id="flanc_despesa" name="tipo_lancamento" value="Despesa" />
-                            <div class="rad-design"></div>
-                            <div class="rad-text">Despesa</div>
+                                <input className="rad-input" type="radio" id="flanc_despesa" name="tipo_lancamento" value="Despesa" />
+                                <div class="rad-design"></div>
+                                <div class="rad-text">Despesa</div>
                             </label>
                         </div>
                         <br />
@@ -72,7 +95,7 @@ const Form_Lancamento = () => {
                         <div className="form_group">
                         <label for="metodo_lancamento">Método de Pagamento: </label>
                         <br />
-                        <select name="metodo_lancamento" id="cars">
+                        <select name="metodo_lancamento" id="mets">
                         {
                             pagamentos.map( pagamento => (
                                 <option value={pagamento.Id}>{pagamento.Titulo}</option>
