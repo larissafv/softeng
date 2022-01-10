@@ -29,13 +29,13 @@ const Form_Lancamento = () => {
         
         json_data["Titulo"] = event.target.elements.titulo_lancamento.value;
         json_data["Descricao"] = event.target.elements.descricao_lancamento.value;
-        json_data["MetodoDePagamento"] = parseInt(event.target.elements.mets.value);
-        json_data["Categoria"] = parseInt(event.target.elements.cars.value);
+        json_data["MetodoDePagamento"] = parseInt(event.target.elements.flanc_metodo.value);
+        json_data["Categoria"] = parseInt(event.target.elements.flanc_categoria.value);
 
         var sinal = 1;
         if(event.target.elements.tipo_lancamento.value == "Despesa")
             sinal = -1
-        json_data["Valor"] = event.target.elements.valor_lancamento.value * sinal;
+        json_data["Valor"] = parseFloat(event.target.elements.valor_lancamento.value) * sinal;
 
         console.log(json_data)
         const requestOptions = {

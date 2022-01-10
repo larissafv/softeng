@@ -4,6 +4,24 @@ from rest_framework.views import APIView
 from .models import Lancamento, Categoria, MetodoDePagamento as Pagamento
 from .serializers import LancamentoSerializer, CategoriaSerializer, PagamentoSerializer
 
+class DashboardAPI(APIView):
+    def get(self, request):
+        queryset = Lancamento.objects.all()
+        ganho = 0 
+        despesa = 0
+        for obj in queryset:
+            if obj.Valor > 0:
+                ganho += obj.Valor
+            else:
+                despesa += obj.Valor
+        total = ganho + despesa
+        return Response({
+            "Investimentos": 0,
+            "Receitas": ganho,
+            "Despesas": despesa,
+            "Saldo": total,
+        }, status=status.HTTP_200_OK)
+
 class LancamentosAPI(APIView):
     def get(self, request):
         queryset = Lancamento.objects.all()
